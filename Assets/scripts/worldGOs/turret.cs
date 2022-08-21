@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class turret : MonoBehaviour
     //similar to canon script\/ 
     public Transform BullSpwanPoint;
     public GameObject bullet;
+    public SoundManager sm;
     void Start()
     {
         player = GameObject.Find("player").transform;
@@ -42,5 +44,14 @@ public class turret : MonoBehaviour
         Instantiate(bullet, BullSpwanPoint.position, BullSpwanPoint.rotation);
         //BullSpwanPoint.rotation instead of transform.rotation
         //cuz unlike the player and its gun this turret rotates in all directions to look at the player
+    }
+
+    //for some reason the soundmanager cannot be added to the players bullet script(inspector)nso im doing it here instead
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+           sm.defeatTurretSFX();
+        }
     }
 }

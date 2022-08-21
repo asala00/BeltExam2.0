@@ -12,6 +12,7 @@ TagManager:
   - SpecialPowerUp
   - camChange
   - enemy
+  - bullet
   layers:
   - Default
   - TransparentFX

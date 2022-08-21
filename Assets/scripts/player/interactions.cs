@@ -19,6 +19,8 @@ public class interactions : MonoBehaviour
     //healthbar vars
     [SerializeField] private Image HPBar;
     [SerializeField] private GameObject getGun;
+    //sound FX
+    [SerializeField] private SoundManager sm;
 
 
     private void Start()
@@ -46,11 +48,12 @@ public class interactions : MonoBehaviour
             winCanvas.SetActive(true);
         }
 
-        if (other.gameObject.CompareTag("powerUp") || other.gameObject.CompareTag("SpecialPowerUp"))
+        if (other.gameObject.CompareTag("powerUp"))
         {
             playerMovemntScript.jumpHeight ++;
             playerMovemntScript.Playerspeed++;
             Pcount++;
+            sm.powerUpSFX();
             Destroy(other.gameObject);
         }
 
@@ -58,6 +61,8 @@ public class interactions : MonoBehaviour
         {
             playerMovemntScript.jumpHeight += 5;
             playerMovemntScript.Playerspeed++;
+            Pcount++;
+            sm.powerUpSFX();
             Destroy(other.gameObject);
         }
 

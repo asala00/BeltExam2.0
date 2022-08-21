@@ -8,6 +8,7 @@ public class playerBullet : MonoBehaviour
     [SerializeField] private float lifeSpan;
     private Rigidbody rb;
     private GameObject enemy;
+    public SoundManager sm;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,6 +23,7 @@ public class playerBullet : MonoBehaviour
         {
             enemy = collision.gameObject;
             Destroy(enemy); //prefabs cant be destroyed so deactivate
+            sm.defeatTurretSFX();
             Destroy(gameObject);
         }
     }

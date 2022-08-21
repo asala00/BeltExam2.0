@@ -6,7 +6,7 @@ public class GunShoot : MonoBehaviour
 {
     public Transform BullSpwanPoint;
     public GameObject bullet;
-    
+    public SoundManager sm;
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -17,6 +17,7 @@ public class GunShoot : MonoBehaviour
             // Where we want to spawn the game object
             // What rotation angle we want the game object to be at when it spawns in
             Instantiate(bullet, BullSpwanPoint.position, transform.rotation);
+            sm.ShootSFX();
         }
     }
 }

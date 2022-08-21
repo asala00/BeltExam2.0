@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4383976527754014613}
   - component: {fileID: 2527544917923192241}
   m_Layer: 0
-  m_Name: temp collect
+  m_Name: Simple Power Up
   m_TagString: powerUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

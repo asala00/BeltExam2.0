@@ -42,6 +42,7 @@ public class interactions : MonoBehaviour
         {
             transform.position = respawnCheckPointR.position;
             HP = 1.0f;
+            
         }
     }
 
@@ -79,12 +80,13 @@ public class interactions : MonoBehaviour
         if (other.gameObject.CompareTag("camChange"))
         {
             endGoalHintCam.SetActive(true);
-            Invoke("disableEndGoalHint",4);
+            Invoke("DisableEndGoalHint",4);
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("offLevel"))
         {
+            Debug.Log("fell off");
             transform.position = respawnCheckPointOffLevel.position;
         }
 
@@ -96,7 +98,7 @@ public class interactions : MonoBehaviour
         
     }
 
-    void disableEndGoalHint()
+    void DisableEndGoalHint()
     {
         endGoalHintCam.SetActive(false);
     }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,7 +29,7 @@ public class move3d : MonoBehaviour
         
         //for jump
         groundedPlayer = _controller.isGrounded;
-        if (groundedPlayer && playerVelocity.y < 0)
+        if (groundedPlayer && playerVelocity.y <= 0)
         {
             playerVelocity.y = 0f;
         }
@@ -42,18 +43,23 @@ public class move3d : MonoBehaviour
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
-
         playerVelocity.y += gravityValue * Time.deltaTime;
-        _controller.Move(playerVelocity * Time.deltaTime);
+        
         //telling the player to move according to the input
         //for local direction moevement (from the old script)
         if (_direction.magnitude >= 0.1f)
         {
+            //rotates the players oriontation based on the cameras rotation
             float _targetAngel = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg+ MovementCam.eulerAngles.y;
             transform.rotation = Quaternion.Euler(0f, _targetAngel, 0f);
             Vector3 moveDirection = Quaternion.Euler(0f, _targetAngel, 0f) * Vector3.forward;
 
-            _controller.Move(moveDirection.normalized * Playerspeed * Time.deltaTime);
+            _controller.Move(moveDirection.normalized * Playerspeed * Time.deltaTime);//moves it according to las code segment
         }
+    }
+
+    private void FixedUpdate()
+    {
+        _controller.Move(playerVelocity * Time.deltaTime); //simulates jumping
     }
 }

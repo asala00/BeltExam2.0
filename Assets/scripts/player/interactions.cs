@@ -21,6 +21,10 @@ public class interactions : MonoBehaviour
     [SerializeField] private GameObject getGun;
     //sound FX
     [SerializeField] private SoundManager sm;
+    //respawn
+    [SerializeField] private Transform respawnCheckPointR;
+    [SerializeField] private Transform respawnCheckPointL;
+    [SerializeField] private Transform respawnCheckPointOffLevel;
 
 
     private void Start()
@@ -36,7 +40,8 @@ public class interactions : MonoBehaviour
 
         if (HP < 0.0f)
         {
-            SceneManager.LoadScene(0);
+            transform.position = respawnCheckPointR.position;
+            HP = 1.0f;
         }
     }
 
@@ -68,7 +73,7 @@ public class interactions : MonoBehaviour
 
         if (other.gameObject.CompareTag("hazard"))
         {
-            SceneManager.LoadScene(0);
+            transform.position = respawnCheckPointL.position;
         }
 
         if (other.gameObject.CompareTag("camChange"))
@@ -78,9 +83,9 @@ public class interactions : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.CompareTag("Respawn"))
+        if (other.gameObject.CompareTag("offLevel"))
         {
-            SceneManager.LoadScene(0);
+            transform.position = respawnCheckPointOffLevel.position;
         }
 
         if (other.CompareTag("gunBox"))
@@ -88,6 +93,7 @@ public class interactions : MonoBehaviour
             getGun.SetActive(true);
             Destroy(other.gameObject);
         }
+        
     }
 
     void disableEndGoalHint()

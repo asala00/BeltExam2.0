@@ -7,13 +7,13 @@ TagManager:
   - win
   - powerUp
   - gunBox
-  - enemyview
   - hazard
   - SpecialPowerUp
   - camChange
   - enemy
   - bullet
   - offLevel
+  - stairs
   layers:
   - Default
   - TransparentFX
@@ -21,7 +21,7 @@ TagManager:
   - ground
   - Water
   - UI
-  - 
+  - stairs
   - 
   - 
   - 

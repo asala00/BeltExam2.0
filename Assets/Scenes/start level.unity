@@ -28668,6 +28668,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5166430973504079311, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     - target: {fileID: 7154411085987017254, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
         type: 3}
       propertyPath: m_Materials.Array.data[0]

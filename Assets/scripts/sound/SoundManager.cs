@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource audioSource;
-    public AudioClip shoot, powerUp, defeatTurret;
+    public AudioSource AudioSource;
+    public AudioClip Shoot, PowerUp, DefeatTurret;
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        AudioSource = GetComponent<AudioSource>();
     }
 
     public void ShootSFX()
     {
-        audioSource.PlayOneShot(shoot);
+        AudioSource.PlayOneShot(Shoot);
     }
 
-    public void powerUpSFX()
+    public void PowerUpSFX()
     {
-        audioSource.PlayOneShot(powerUp);
+        AudioSource.PlayOneShot(PowerUp);
     }
 
-    public void defeatTurretSFX()
+    public void DefeatTurretSFX()
     {
-        audioSource.PlayOneShot(defeatTurret);
+        AudioSource.PlayOneShot(DefeatTurret);
     }
 }

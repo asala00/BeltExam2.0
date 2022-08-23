@@ -3,45 +3,45 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turret : MonoBehaviour
+public class Turret : MonoBehaviour
 {
-    private Transform player; //to use it in start to look at the player
-    private bool detected; //will keep our method from being Invoked infinitely
+    private Transform _player; //to use it in start to look at the player
+    private bool _detected; //will keep our method from being Invoked infinitely
     
     //similar to canon script\/ 
     public Transform BullSpwanPoint;
-    public GameObject bullet;
-    public SoundManager sm;
+    public GameObject Bullet;
+    public SoundManager SM;
     void Start()
     {
-        player = GameObject.Find("player").transform;
+        _player = GameObject.Find("player").transform;
     }    
 
-    // Update is called once per frame
+   
     void Update()
     {
-        transform.LookAt(player);
+        transform.LookAt(_player);
         detectingPlayer(); //to constantly shoot at the player when in range
     }
 
     void detectingPlayer()
     {
-        float playerDistance = Vector3.Distance(player.transform.position, transform.position);
-        if (playerDistance < 25 && detected == false)
+        float playerDistance = Vector3.Distance(_player.transform.position, transform.position);
+        if (playerDistance < 25 && _detected == false)
         {
-            detected = true;
+            _detected = true;
             InvokeRepeating("Shooting",1,0.5f); //time == delay time
         }
         else if (playerDistance > 17)
         {
-            detected = false;
+            _detected = false;
             CancelInvoke("Shooting");
         }
     }
 
     void Shooting()
     {
-        Instantiate(bullet, BullSpwanPoint.position, BullSpwanPoint.rotation);
+        Instantiate(Bullet, BullSpwanPoint.position, BullSpwanPoint.rotation);
         //BullSpwanPoint.rotation instead of transform.rotation
         //cuz unlike the player and its gun this turret rotates in all directions to look at the player
     }
@@ -51,7 +51,7 @@ public class turret : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bullet"))
         {
-           sm.defeatTurretSFX();
+           SM.DefeatTurretSFX();
         }
     }
 }

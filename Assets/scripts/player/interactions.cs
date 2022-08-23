@@ -7,65 +7,57 @@ using UnityEngine.UI;     //to code the text & images ui
 using TMPro;
 using UnityEngine.SceneManagement;
 
-public class interactions : MonoBehaviour
+public class Interactions : MonoBehaviour
 {
-    [SerializeField]private GameObject winCanvas;
-    [SerializeField] private GameObject PlayerHUD;
-    public move3d playerMovemntScript;
-    [SerializeField] private GameObject endGoalHintCam;
-    [SerializeField] private TextMeshProUGUI Pscore;     //Text variables grant us access to those objects' Text components
-    private int Pcount;
+    [SerializeField] private GameObject _winCanvas;
+    [SerializeField] private GameObject _playerHUD;
+    public MoveIn3d PlayerMovemntScript;
+    [SerializeField] private GameObject _endGoalHintCam;
+    [SerializeField] private TextMeshProUGUI _pScore;     //Text variables grant us access to those objects' Text components
+    private int _pCount;
     public float HP = 1.0f;
     //healthbar vars
-    [SerializeField] private Image HPBar;
-    [SerializeField] private GameObject getGun;
+    [SerializeField] private Image _hpBar;
+    [SerializeField] private GameObject _getGun;
     //sound FX
-    [SerializeField] private SoundManager sm;
+    [SerializeField] private SoundManager _sm;
     //respawn
-    [SerializeField] private Transform respawnCheckPointR;
-    [SerializeField] private Transform respawnCheckPointL;
-    [SerializeField] private Transform respawnCheckPointOffLevel;
+    [SerializeField] private Transform _respawnCheckPointR;
+    [SerializeField] private Transform _respawnCheckPointL;
+    [SerializeField] private Transform _respawnCheckPointOffLevel;
 
 
     private void Start()
     {
-        Pscore.text = ("0");
-        getGun.SetActive(false);
+        _pScore.text = ("0");
+        _getGun.SetActive(false);
     }
 
     private void Update()
     {
-        Pscore.text = ("18/" + Pcount);
-        HPBar.fillAmount = HP;
-
-        
-        // if (HP < 0.2f)
-        // {
-        //     transform.position = respawnCheckPointR.position;
-        //     HP = 1.0f;
-        //     
-        // }
+        _pScore.text = ("18/" + _pCount);
+        _hpBar.fillAmount = HP;
     }
 
     void Die()
     {
         if (HP < 0.2f)
         {
-            transform.position = respawnCheckPointR.position;
+            transform.position = _respawnCheckPointR.position;
             HP = 1.0f;
         }
     }
 
     void Die2()
     {
-        transform.position = respawnCheckPointL.position;
+        transform.position = _respawnCheckPointL.position;
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.gameObject.CompareTag("offLevel"))
         {
             Debug.Log("fell off");
-            transform.position = respawnCheckPointOffLevel.position;
+            transform.position = _respawnCheckPointOffLevel.position;
         }
         if (hit.gameObject.CompareTag("hazard"))
         {
@@ -82,37 +74,32 @@ public class interactions : MonoBehaviour
     {
         if (other.gameObject.CompareTag("win"))
         {
-            PlayerHUD.SetActive(false);
-            winCanvas.SetActive(true);
+            _playerHUD.SetActive(false);
+            _winCanvas.SetActive(true);
         }
 
         if (other.gameObject.CompareTag("powerUp"))
         {
-            playerMovemntScript.jumpHeight ++;
-            playerMovemntScript.Playerspeed++;
-            Pcount++;
-            sm.powerUpSFX();
+            PlayerMovemntScript.JumpHeight ++;
+            PlayerMovemntScript.PlayerSpeed++;
+            _pCount++;
+            _sm.PowerUpSFX();
             Destroy(other.gameObject);
         }
 
         if (other.gameObject.CompareTag("SpecialPowerUp"))
         {
-            playerMovemntScript.jumpHeight += 5;
-            playerMovemntScript.Playerspeed++;
-            Pcount++;
-            sm.powerUpSFX();
+            PlayerMovemntScript.JumpHeight += 5;
+            PlayerMovemntScript.PlayerSpeed++;
+            _pCount++;
+            _sm.PowerUpSFX();
             Destroy(other.gameObject);
         }
 
-        // if (other.gameObject.CompareTag("hazard"))
-        // {
-        //     transform.position = respawnCheckPointL.position;
-        // }
-
         if (other.gameObject.CompareTag("camChange"))
         {
-            endGoalHintCam.SetActive(true);
-            playerMovemntScript.enabled = false;
+            _endGoalHintCam.SetActive(true);
+            PlayerMovemntScript.enabled = false;
             Invoke("DisableEndGoalHint",4);
             Destroy(other.gameObject);
         }
@@ -120,7 +107,7 @@ public class interactions : MonoBehaviour
 
         if (other.CompareTag("gunBox"))
         {
-            getGun.SetActive(true);
+            _getGun.SetActive(true);
             Destroy(other.gameObject);
         }
         
@@ -128,7 +115,7 @@ public class interactions : MonoBehaviour
 
     void DisableEndGoalHint()
     {
-        endGoalHintCam.SetActive(false);
-        playerMovemntScript.enabled = true;
+        _endGoalHintCam.SetActive(false);
+        PlayerMovemntScript.enabled = true;
     }
 }

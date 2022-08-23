@@ -2,20 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class turretBullet : MonoBehaviour
+public class TurretBullet : MonoBehaviour
 {
-    [SerializeField] private float bulletSpeed;
-    [SerializeField] private float lifeSpan;
-    private Rigidbody rb; //will be used to AddForce and move the projectile
+    [SerializeField] private float _bulletSpeed;
+    [SerializeField] private float _lifeSpan;
+    private Rigidbody _rb; //will be used to AddForce and move the projectile
     
     //calling the script that has the health to makae the bullet effect it 
-     private interactions playerHPscript;
+     private Interactions _playerHPscript;
     void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        rb.AddForce(transform.forward *bulletSpeed );
-        Invoke("Delete",lifeSpan);
+        _rb = GetComponent<Rigidbody>();
+        _rb.AddForce(transform.forward * _bulletSpeed );
+        Invoke("Delete",_lifeSpan);
     }
+    
     private void Delete()
     {
         Destroy(gameObject);
@@ -25,8 +26,8 @@ public class turretBullet : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            playerHPscript = collision.gameObject.GetComponent<interactions>();
-            playerHPscript.HP -=0.2f;
+            _playerHPscript = collision.gameObject.GetComponent<Interactions>();
+            _playerHPscript.HP -=0.2f;
             
             Destroy(gameObject);
         }

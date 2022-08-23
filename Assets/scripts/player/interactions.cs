@@ -38,11 +38,43 @@ public class interactions : MonoBehaviour
         Pscore.text = ("18/" + Pcount);
         HPBar.fillAmount = HP;
 
-        if (HP < 0.0f)
+        
+        // if (HP < 0.2f)
+        // {
+        //     transform.position = respawnCheckPointR.position;
+        //     HP = 1.0f;
+        //     
+        // }
+    }
+
+    void Die()
+    {
+        if (HP < 0.2f)
         {
             transform.position = respawnCheckPointR.position;
             HP = 1.0f;
-            
+        }
+    }
+
+    void Die2()
+    {
+        transform.position = respawnCheckPointL.position;
+    }
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("offLevel"))
+        {
+            Debug.Log("fell off");
+            transform.position = respawnCheckPointOffLevel.position;
+        }
+        if (hit.gameObject.CompareTag("hazard"))
+        {
+            Die2();
+        }
+
+        if (hit.gameObject.CompareTag("enemy") && HP < 0.2f)
+        {
+            Die();
         }
     }
 
@@ -83,12 +115,7 @@ public class interactions : MonoBehaviour
             Invoke("DisableEndGoalHint",4);
             Destroy(other.gameObject);
         }
-
-        if (other.gameObject.CompareTag("offLevel"))
-        {
-            Debug.Log("fell off");
-            transform.position = respawnCheckPointOffLevel.position;
-        }
+        
 
         if (other.CompareTag("gunBox"))
         {

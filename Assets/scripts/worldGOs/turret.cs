@@ -16,8 +16,7 @@ public class Turret : MonoBehaviour
     {
         _player = GameObject.Find("Player").transform;
     }    
-
-   
+    
     void Update()
     {
         transform.LookAt(_player);
@@ -42,11 +41,11 @@ public class Turret : MonoBehaviour
     void Shooting()
     {
         Instantiate(Bullet, BullSpwanPoint.position, BullSpwanPoint.rotation);
-        //BullSpwanPoint.rotation instead of transform.rotation
+        //BullSpawnPoint.rotation instead of transform.rotation
         //cuz unlike the player and its gun this turret rotates in all directions to look at the player
     }
 
-    //for some reason the soundmanager cannot be added to the players bullet script(inspector)nso im doing it here instead
+    //for some reason the sound manager cannot be added to the players bullet script(inspector)nso im doing it here instead
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("bullet"))

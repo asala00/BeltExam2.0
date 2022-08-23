@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SoundControl : MonoBehaviour
 {
-    private AudioSource _audioSource; //the Audio Source component itself so we can control it thro script
+    public AudioSource AudioSource; //the Audio Source component itself so we can control it thro script
     
     void Start()
     {
         // Using the Start method to directly grab the Audio Source component from the game object itself and plug it in as our variable.
-        _audioSource = GetComponent<AudioSource>();
+        AudioSource = GetComponent<AudioSource>();
     }
     
     void Update()
@@ -21,16 +21,16 @@ public class SoundControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            _audioSource.Stop();
+            AudioSource.Stop();
             
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            _audioSource.Play();
+            AudioSource.Play();
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            _audioSource.Pause();
+            AudioSource.Pause();
         }
 
     }

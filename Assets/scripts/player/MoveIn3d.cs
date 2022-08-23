@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class MoveIn3d : MonoBehaviour
 {
-    public CharacterController Controller; //puvlic to plug it in and use it for the last .move command
+    public CharacterController Controller; //public to plug it in and use it for the last .move command
     public float PlayerSpeed;
-    
-    //ref for our cam so we can use it to change where our GO's forward is (the way the camera is facing)
-    [SerializeField] Transform MovementCam;
+    [SerializeField] Transform MovementCam; //ref for our cam so we can use it to change where our GO's forward is (the way the camera is facing)
     
     //for jump
     private Vector3 _playerVelocity;
@@ -43,19 +41,19 @@ public class MoveIn3d : MonoBehaviour
         
         
         //telling the player to move according to the input
-        //for local direction moevement (from the old script)
+        //for local direction movement (from the old script)
         if (_direction.magnitude >= 0.1f)
         {
-            //rotates the players oriontation based on the cameras rotation
+            //rotates the players orientation based on the cameras rotation
             float _targetAngel = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg+ MovementCam.eulerAngles.y;
             transform.rotation = Quaternion.Euler(0f, _targetAngel, 0f);
             Vector3 moveDirection = Quaternion.Euler(0f, _targetAngel, 0f) * Vector3.forward;
 
-            Controller.Move(moveDirection.normalized * PlayerSpeed * Time.deltaTime);//moves it according to las code segment
+            Controller.Move(moveDirection.normalized * PlayerSpeed * Time.deltaTime);//moves it according to last code segment
         }
     }
 
-    private void FixedUpdate()
+    private void FixedUpdate() 
     {
         Controller.Move(_playerVelocity * Time.deltaTime); //simulates jumping
     }

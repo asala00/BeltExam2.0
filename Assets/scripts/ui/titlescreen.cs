@@ -8,6 +8,7 @@ public class titlescreen : MonoBehaviour
     [SerializeField] private GameObject playerHUD;
     [SerializeField] private GameObject _refundCanvas;
     public SoundManager SM;
+    public AudioSource BackGroundMusic;
     public void startG()
     {
         titleScreenCanvas.SetActive(false);
@@ -16,6 +17,7 @@ public class titlescreen : MonoBehaviour
     }
     public void Refund()
     {
+        BackGroundMusic.enabled = false;
         _refundCanvas.SetActive(true);
         SM.RickRollSFX();
     }

@@ -49,7 +49,6 @@ public class Interactions : MonoBehaviour
         }
         if (hit.gameObject.CompareTag("hazard"))
         {
-            // Die2();
             transform.position = _respawnCheckPointL.position;
         }
 
@@ -66,11 +65,6 @@ public class Interactions : MonoBehaviour
             HP = 1.0f;
         }
     }
-
-    // void Die2()
-    // {
-    //     transform.position = _respawnCheckPointL.position;
-    // }
 
     private void OnTriggerEnter(Collider other)
     {

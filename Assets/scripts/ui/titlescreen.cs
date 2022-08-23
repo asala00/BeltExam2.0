@@ -9,6 +9,7 @@ public class titlescreen : MonoBehaviour
     public void startG()
     {
         titleScreenCanvas.SetActive(false);
+        Cursor.lockState = CursorLockMode.Locked;
         playerHUD.SetActive(true);
     }
     public void QuitG()

@@ -11,11 +11,10 @@ GameObject:
   - component: {fileID: 216224566793950058}
   - component: {fileID: 216224566793950061}
   - component: {fileID: 216224566793950060}
-  - component: {fileID: 216224566793950063}
   - component: {fileID: 103067867907106970}
   m_Layer: 0
   m_Name: gun
-  m_TagString: gunBox
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,19 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &216224566793950063
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216224566793950049}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 3.6683354, z: 4.1387305}
-  m_Center: {x: 0.00000009100071, y: -0.25468588, z: 0.2456885}
 --- !u!114 &103067867907106970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,7 +112,6 @@ GameObject:
   - component: {fileID: 216224566812688959}
   - component: {fileID: 216224566812688954}
   - component: {fileID: 216224566812688957}
-  - component: {fileID: 216224566812688956}
   m_Layer: 0
   m_Name: w
   m_TagString: Untagged
@@ -199,19 +184,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &216224566812688956
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 216224566812688958}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &216224568105460010
 GameObject:
   m_ObjectHideFlags: 0

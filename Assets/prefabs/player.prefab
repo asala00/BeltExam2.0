@@ -140,8 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1913f2002df4cc3add669a23cb7f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controller: {fileID: 0}
-  PlayerSpeed: 0
+  Controller: {fileID: 7595408341001271405}
+  PlayerSpeed: 5
   MovementCam: {fileID: 0}
   JumpHeight: 2
 --- !u!143 &7595408341001271405

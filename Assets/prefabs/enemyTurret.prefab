@@ -407,7 +407,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BullSpwanPoint: {fileID: 7324309911253914400}
-  bullet: {fileID: 5128399334805353131, guid: 973c7f61b755949b782f5040bc18ac1d, type: 3}
+  Bullet: {fileID: 5128399334805353131, guid: 973c7f61b755949b782f5040bc18ac1d, type: 3}
+  SM: {fileID: 0}
 --- !u!1 &7324309911011034642
 GameObject:
   m_ObjectHideFlags: 0

@@ -14,7 +14,7 @@ public class Turret : MonoBehaviour
     public SoundManager SM;
     void Start()
     {
-        _player = GameObject.Find("player").transform;
+        _player = GameObject.Find("Player").transform;
     }    
 
    

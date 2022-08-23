@@ -16,8 +16,7 @@ public class MoveIn3d : MonoBehaviour
     private bool _groundedPlayer;
     public float JumpHeight = 2.0f;
     private float _gravityValue = -9.81f;
-    
-    
+
     void Update()
     {
         float Hinput = Input.GetAxisRaw("Horizontal") * PlayerSpeed;

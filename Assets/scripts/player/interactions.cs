@@ -75,6 +75,7 @@ public class Interactions : MonoBehaviour
         if (other.gameObject.CompareTag("win"))
         {
             _playerHUD.SetActive(false);
+            Cursor.lockState = CursorLockMode.None;
             _winCanvas.SetActive(true);
         }
 

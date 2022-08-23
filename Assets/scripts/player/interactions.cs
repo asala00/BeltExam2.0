@@ -39,19 +39,7 @@ public class Interactions : MonoBehaviour
         _hpBar.fillAmount = HP;
     }
 
-    void Die()
-    {
-        if (HP < 0.2f)
-        {
-            transform.position = _respawnCheckPointR.position;
-            HP = 1.0f;
-        }
-    }
-
-    void Die2()
-    {
-        transform.position = _respawnCheckPointL.position;
-    }
+    
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.gameObject.CompareTag("offLevel"))
@@ -61,7 +49,8 @@ public class Interactions : MonoBehaviour
         }
         if (hit.gameObject.CompareTag("hazard"))
         {
-            Die2();
+            // Die2();
+            transform.position = _respawnCheckPointL.position;
         }
 
         if (hit.gameObject.CompareTag("enemy") && HP < 0.2f)
@@ -69,6 +58,19 @@ public class Interactions : MonoBehaviour
             Die();
         }
     }
+    void Die()
+    {
+        if (HP < 0.2f)
+        {
+            transform.position = _respawnCheckPointR.position;
+            HP = 1.0f;
+        }
+    }
+
+    // void Die2()
+    // {
+    //     transform.position = _respawnCheckPointL.position;
+    // }
 
     private void OnTriggerEnter(Collider other)
     {

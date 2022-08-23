@@ -104,14 +104,15 @@ public class interactions : MonoBehaviour
             Destroy(other.gameObject);
         }
 
-        if (other.gameObject.CompareTag("hazard"))
-        {
-            transform.position = respawnCheckPointL.position;
-        }
+        // if (other.gameObject.CompareTag("hazard"))
+        // {
+        //     transform.position = respawnCheckPointL.position;
+        // }
 
         if (other.gameObject.CompareTag("camChange"))
         {
             endGoalHintCam.SetActive(true);
+            playerMovemntScript.enabled = false;
             Invoke("DisableEndGoalHint",4);
             Destroy(other.gameObject);
         }
@@ -128,5 +129,6 @@ public class interactions : MonoBehaviour
     void DisableEndGoalHint()
     {
         endGoalHintCam.SetActive(false);
+        playerMovemntScript.enabled = true;
     }
 }

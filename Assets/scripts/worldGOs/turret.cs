@@ -30,7 +30,7 @@ public class turret : MonoBehaviour
         if (playerDistance < 25 && detected == false)
         {
             detected = true;
-            InvokeRepeating("Shooting",0,0.5f); //time == delay time
+            InvokeRepeating("Shooting",1,0.5f); //time == delay time
         }
         else if (playerDistance > 17)
         {

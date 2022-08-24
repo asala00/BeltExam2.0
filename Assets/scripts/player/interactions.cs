@@ -59,7 +59,7 @@ public class Interactions : MonoBehaviour
     }
     void Die()
     {
-        if (HP < 0.2f)
+        if (HP < 0.3f)
         {
             transform.position = _respawnCheckPointR.position;
             HP = 1.0f;

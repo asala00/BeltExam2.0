@@ -578,7 +578,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleScreenCanvas: {fileID: 167629727}
   playerHUD: {fileID: 1502369849}
-  _refundCanvas: {fileID: 1208674770}
+  refundCanvas: {fileID: 1208674770}
   SM: {fileID: 318352319}
   BackGroundMusic: {fileID: 1801171598}
 --- !u!4 &59822013 stripped
@@ -1929,7 +1929,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248440083}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
@@ -1943,7 +1943,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -1.928363}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
 --- !u!1 &248853883
@@ -2419,7 +2419,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.09165635, y: 0.007386973, z: -0.00067994377, w: 0.99576306}
+  m_LocalRotation: {x: 0.09165635, y: 0.0073869373, z: -0.0006799406, w: 0.99576306}
   m_LocalPosition: {x: -1.2011756, y: 3.89, z: -21.058508}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2563,7 +2563,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343787093}
-  m_LocalRotation: {x: 0.09165634, y: 0.0073869727, z: -0.00067994377, w: 0.99576306}
+  m_LocalRotation: {x: 0.09165634, y: 0.0073869373, z: -0.00067994057, w: 0.99576306}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -15598,8 +15598,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1250286465}
-        m_TargetAssemblyTypeName: playQuitCanvas, Assembly-CSharp
-        m_MethodName: playG
+        m_TargetAssemblyTypeName: PlayQuitCanvas, Assembly-CSharp
+        m_MethodName: PlayG
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26753,8 +26753,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1770058704}
-        m_TargetAssemblyTypeName: titlescreen, Assembly-CSharp
-        m_MethodName: startG
+        m_TargetAssemblyTypeName: TitleScreen, Assembly-CSharp
+        m_MethodName: StartG
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -26816,7 +26816,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   titleScreenCanvas: {fileID: 167629727}
   playerHUD: {fileID: 1502369849}
-  _refundCanvas: {fileID: 1208674770}
+  refundCanvas: {fileID: 1208674770}
   SM: {fileID: 318352319}
   BackGroundMusic: {fileID: 1801171598}
 --- !u!1 &1801171597

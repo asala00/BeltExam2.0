@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class playQuitCanvas : MonoBehaviour
+public class PlayQuitCanvas : MonoBehaviour
 {
 
-    public void playG()
+    public void PlayG()
     {
         SceneManager.LoadScene(0);
     }

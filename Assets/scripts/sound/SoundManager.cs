@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public AudioSource AudioSource;
-    public AudioClip Shoot, PowerUp, DefeatTurret, RickRoll;
+    public AudioClip Shoot, PowerUp, DefeatTurret, RickRoll, Respawn, Win;
     void Start()
     {
         AudioSource = GetComponent<AudioSource>();
@@ -29,5 +29,15 @@ public class SoundManager : MonoBehaviour
     public void RickRollSFX()
     {
         AudioSource.PlayOneShot(RickRoll);
+    }
+
+    public void RespawnSFX()
+    {
+        AudioSource.PlayOneShot(Respawn);
+    }
+
+    public void WinSFX()
+    {
+        AudioSource.PlayOneShot(Win);
     }
 }

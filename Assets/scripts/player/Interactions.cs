@@ -46,10 +46,12 @@ public class Interactions : MonoBehaviour
         {
             Debug.Log("fell off");
             transform.position = _respawnCheckPointOffLevel.position;
+            _sm.RespawnSFX();
         }
         if (hit.gameObject.CompareTag("hazard"))
         {
             transform.position = _respawnCheckPointL.position;
+            _sm.RespawnSFX();
         }
 
         if (hit.gameObject.CompareTag("enemy") && HP < 0.2f)
@@ -63,6 +65,7 @@ public class Interactions : MonoBehaviour
         {
             transform.position = _respawnCheckPointR.position;
             HP = 1.0f;
+            _sm.RespawnSFX();
         }
     }
 
@@ -73,6 +76,7 @@ public class Interactions : MonoBehaviour
             _playerHUD.SetActive(false);
             Cursor.lockState = CursorLockMode.None;
             _winCanvas.SetActive(true);
+            _sm.WinSFX();
         }
 
         if (other.gameObject.CompareTag("powerUp"))

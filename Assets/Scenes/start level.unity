@@ -577,8 +577,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74813886062c94057824371df9198605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerMovemntScript: {fileID: 0}
-  CameraMovement: {fileID: 0}
+  PlayerMovemntScript: {fileID: 4248754642249337814}
+  CameraMovement: {fileID: 1477906785}
   titleScreenCanvas: {fileID: 167629727}
   playerHUD: {fileID: 1502369849}
   refundCanvas: {fileID: 1208674770}
@@ -2459,7 +2459,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.09165635, y: 0.0073868367, z: -0.0006799311, w: 0.99576306}
+  m_LocalRotation: {x: 0.09165635, y: 0.0073868018, z: -0.000679928, w: 0.99576306}
   m_LocalPosition: {x: 79.83257, y: -38.39125, z: -107.39158}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2603,7 +2603,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343787093}
-  m_LocalRotation: {x: 0.09165634, y: 0.0073868367, z: -0.0006799313, w: 0.99576306}
+  m_LocalRotation: {x: 0.09165634, y: 0.0073868018, z: -0.000679928, w: 0.99576306}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6504,7 +6504,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 729466582}
-  m_LocalRotation: {x: 0.07572279, y: 0.0073967655, z: -0.000561732, w: 0.99710137}
+  m_LocalRotation: {x: 0.07572279, y: 0.0073967315, z: -0.0005617294, w: 0.99710137}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6916,7 +6916,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744046072}
-  m_LocalRotation: {x: 0.10759912, y: 0.0073749744, z: -0.0007981968, w: 0.99416673}
+  m_LocalRotation: {x: 0.10759912, y: 0.0073749833, z: -0.00079819775, w: 0.99416673}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -30697,6 +30697,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 287195057920751223, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 287195057920751223, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
+        type: 3}
       propertyPath: MovementCam
       value: 
       objectReference: {fileID: 330585546}
@@ -30950,7 +30955,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 4248754642249337808}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8a1913f2002df4cc3add669a23cb7f8d, type: 3}
   m_Name: 

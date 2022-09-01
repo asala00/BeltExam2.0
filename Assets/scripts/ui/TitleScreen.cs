@@ -15,7 +15,11 @@ public class TitleScreen : MonoBehaviour
 
     private void Awake()
     {
-        PlayerMovemntScript.enabled = false;
+        // CameraMovement.SetActive(false);
+    }
+
+    private void Start()
+    {
         CameraMovement.SetActive(false);
     }
 

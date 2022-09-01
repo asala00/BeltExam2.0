@@ -49,9 +49,7 @@ public class Interactions : MonoBehaviour
         }
         if (hit.gameObject.CompareTag("enemy") && HP < 0.2f)
         {
-            // playersController.enabled = false;
             transform.position = _respawnCheckPointR.position;
-            // playersController.enabled = true;
             HP = 1.0f;
             _sm.RespawnSFX();
         }

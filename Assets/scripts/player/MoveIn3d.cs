@@ -37,9 +37,9 @@ public class MoveIn3d : MonoBehaviour
         {
             _playerVelocity.y += Mathf.Sqrt(JumpHeight * -3.0f * _gravityValue);
         }
+
         _playerVelocity.y += _gravityValue * Time.deltaTime;
-        
-        
+
         //telling the player to move according to the input
         //for local direction movement (from the old script)
         if (_direction.magnitude >= 0.1f)
@@ -56,5 +56,13 @@ public class MoveIn3d : MonoBehaviour
     private void FixedUpdate() 
     {
         Controller.Move(_playerVelocity * Time.deltaTime); //simulates jumping
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("JumpBlock"))
+        {
+            _playerVelocity.y += _gravityValue;
+        }
     }
 }

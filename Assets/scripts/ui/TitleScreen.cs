@@ -6,6 +6,7 @@ using UnityEngine;
 public class TitleScreen : MonoBehaviour
 {
     public MoveIn3d PlayerMovemntScript;
+    [SerializeField] private GameObject CameraMovement;
     [SerializeField] private GameObject titleScreenCanvas;
     [SerializeField] private GameObject playerHUD;
     [SerializeField] private GameObject refundCanvas;
@@ -15,10 +16,12 @@ public class TitleScreen : MonoBehaviour
     private void Awake()
     {
         PlayerMovemntScript.enabled = false;
+        CameraMovement.SetActive(false);
     }
 
     public void StartG()
     {
+        CameraMovement.SetActive(true);
         PlayerMovemntScript.enabled = true;
         titleScreenCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;

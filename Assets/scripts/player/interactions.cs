@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class Interactions : MonoBehaviour
 {
+    [SerializeField] private CharacterController playersController;
     [SerializeField] private GameObject _winCanvas;
     [SerializeField] private GameObject _playerHUD;
     public MoveIn3d PlayerMovemntScript;
@@ -39,31 +40,18 @@ public class Interactions : MonoBehaviour
         _hpBar.fillAmount = HP;
     }
 
-    
+
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (hit.gameObject.CompareTag("offLevel"))
+        if (hit.gameObject.CompareTag("enemy"))
         {
-            Debug.Log("fell off");
-            transform.position = _respawnCheckPointOffLevel.position;
-            _sm.RespawnSFX();
+            HP -= 0.1f;
         }
-        if (hit.gameObject.CompareTag("hazard"))
-        {
-            transform.position = _respawnCheckPointL.position;
-            _sm.RespawnSFX();
-        }
-
         if (hit.gameObject.CompareTag("enemy") && HP < 0.2f)
         {
-            Die();
-        }
-    }
-    void Die()
-    {
-        if (HP < 0.3f)
-        {
+            // playersController.enabled = false;
             transform.position = _respawnCheckPointR.position;
+            // playersController.enabled = true;
             HP = 1.0f;
             _sm.RespawnSFX();
         }
@@ -112,6 +100,22 @@ public class Interactions : MonoBehaviour
             Destroy(other.gameObject);
         }
         
+        if (other.gameObject.CompareTag("offLevel"))
+        {
+            playersController.enabled = false;
+            Debug.Log("fell off");
+            transform.position = _respawnCheckPointOffLevel.position;
+            playersController.enabled = true;
+            _sm.RespawnSFX();
+        }
+        
+        if (other.gameObject.CompareTag("hazard"))
+        {
+            playersController.enabled = false;
+            transform.position = _respawnCheckPointL.position;
+            playersController.enabled = true;
+            _sm.RespawnSFX();
+        }
     }
 
     void DisableEndGoalHint()

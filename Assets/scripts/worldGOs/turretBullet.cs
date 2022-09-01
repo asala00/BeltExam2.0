@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TurretBullet : MonoBehaviour
 {
-    [SerializeField] private float _bulletSpeed;
-    [SerializeField] private float _lifeSpan;
+    [SerializeField] private float bulletSpeed;
+    [SerializeField] private float lifeSpan;
     private Rigidbody _rb; //will be used to AddForce and move the projectile
     
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _rb.AddForce(transform.forward * _bulletSpeed );
-        Invoke("Delete",_lifeSpan);
+        _rb.AddForce(transform.forward * bulletSpeed );
+        Invoke("Delete",lifeSpan);
     }
     
     private void Delete()

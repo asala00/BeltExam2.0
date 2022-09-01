@@ -1,41 +1,33 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TitleScreen : MonoBehaviour
 {
-    public MoveIn3d PlayerMovemntScript;
-    [SerializeField] private GameObject CameraMovement;
+    [SerializeField] private GameObject cameraMovement;
     [SerializeField] private GameObject titleScreenCanvas;
     [SerializeField] private GameObject playerHUD;
     [SerializeField] private GameObject refundCanvas;
-    public SoundManager SM;
-    public AudioSource BackGroundMusic;
-
-    private void Awake()
-    {
-        // CameraMovement.SetActive(false);
-    }
+    public SoundManager sm;
+    public AudioSource backGroundMusic;
+    public MoveIn3d playerMovemntScript;
 
     private void Start()
     {
-        CameraMovement.SetActive(false);
+        cameraMovement.SetActive(false);
     }
 
     public void StartG()
     {
-        CameraMovement.SetActive(true);
-        PlayerMovemntScript.enabled = true;
+        cameraMovement.SetActive(true);
+        playerMovemntScript.enabled = true;
         titleScreenCanvas.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         playerHUD.SetActive(true);
     }
     public void Refund()
     {
-        BackGroundMusic.enabled = false;
+        backGroundMusic.enabled = false;
         refundCanvas.SetActive(true);
-        SM.RickRollSFX();
+        sm.RickRollSFX();
     }
 
 }

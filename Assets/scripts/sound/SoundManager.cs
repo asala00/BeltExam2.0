@@ -1,43 +1,50 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource AudioSource;
-    public AudioClip Shoot, PowerUp, DefeatTurret, RickRoll, Respawn, Win;
+    public AudioSource audioSource;
+    public AudioClip shoot;
+    public AudioClip powerUp;
+    public AudioClip defeatTurret;
+    public AudioClip rickRoll;
+    public AudioClip respawn;
+    public AudioClip win;
+
     void Start()
     {
-        AudioSource = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void ShootSFX()
     {
-        AudioSource.PlayOneShot(Shoot);
+        audioSource.PlayOneShot(shoot);
     }
 
     public void PowerUpSFX()
     {
-        AudioSource.PlayOneShot(PowerUp);
+        audioSource.PlayOneShot(powerUp);
     }
 
     public void DefeatTurretSFX()
     {
-        AudioSource.PlayOneShot(DefeatTurret);
+        audioSource.PlayOneShot(defeatTurret);
     }
 
     public void RickRollSFX()
     {
-        AudioSource.PlayOneShot(RickRoll);
+        audioSource.PlayOneShot(rickRoll);
     }
 
     public void RespawnSFX()
     {
-        AudioSource.PlayOneShot(Respawn);
+        audioSource.PlayOneShot(respawn);
     }
 
     public void WinSFX()
     {
-        AudioSource.PlayOneShot(Win);
+        audioSource.PlayOneShot(win);
     }
 }

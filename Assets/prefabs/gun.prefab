@@ -98,9 +98,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 861a046fa50d0464489944073866fcb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BullSpwanPoint: {fileID: 216224568105460011}
-  Bullet: {fileID: 5085663572289549952, guid: 007ca41ff93bd4da382dca7814d96a7e, type: 3}
-  SM: {fileID: 0}
+  bullSpwanPoint: {fileID: 216224568105460011}
+  bullet: {fileID: 5085663572289549952, guid: 007ca41ff93bd4da382dca7814d96a7e, type: 3}
+  sm: {fileID: 0}
 --- !u!1 &216224566812688958
 GameObject:
   m_ObjectHideFlags: 0

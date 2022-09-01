@@ -1,17 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
     private Transform _player; //to use it in start to look at the player
     private bool _detected; //will keep our method from being Invoked infinitely
-    
-    //similar to canon script\/ 
-    public Transform BullSpwanPoint;
-    public GameObject Bullet;
-    public SoundManager SM;
+    public Transform bullSpwanPoint;
+    public GameObject bullet;
+    public SoundManager sm;
     void Start()
     {
         _player = GameObject.Find("Player").transform;
@@ -40,7 +35,7 @@ public class Turret : MonoBehaviour
 
     void Shooting()
     {
-        Instantiate(Bullet, BullSpwanPoint.position, BullSpwanPoint.rotation);
+        Instantiate(bullet, bullSpwanPoint.position, bullSpwanPoint.rotation);
         //BullSpawnPoint.rotation instead of transform.rotation
         //cuz unlike the player and its gun this turret rotates in all directions to look at the player
     }
@@ -50,7 +45,7 @@ public class Turret : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("bullet"))
         {
-           SM.DefeatTurretSFX();
+           sm.DefeatTurretSFX();
         }
     }
 }

@@ -1,20 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerBullet : MonoBehaviour
 {
-    [SerializeField] private float _bulletSpeed;
-    [SerializeField] private float _lifeSpan;
+    [SerializeField] private float bulletSpeed;
+    [SerializeField] private float lifeSpan;
     private Rigidbody _rb;
     private GameObject _enemy;
    
     void Start()
     {
         _rb = GetComponent<Rigidbody>();
-        _rb.AddForce(transform.right * _bulletSpeed );//replaced vector3 with transform so it rotates wherever the player is facing+used right instead of forward cuz the guns orientation was based on the global and coldnt be changed
+        _rb.AddForce(transform.right * bulletSpeed );//replaced vector3 with transform so it rotates wherever the player is facing+used right instead of forward cuz the guns orientation was based on the global and coldnt be changed
         
-        Invoke("Delete",_lifeSpan);
+        Invoke("Delete",lifeSpan);
     }
 
     private void OnCollisionEnter(Collision collision)

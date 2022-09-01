@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GunShoot : MonoBehaviour
 {
-    public Transform BullSpwanPoint;
-    public GameObject Bullet;
-    public SoundManager SM;
+    public Transform bullSpwanPoint;
+    public GameObject bullet;
+    public SoundManager sm;
     void Update()
     {
         if (Input.GetButtonDown("Fire1"))
@@ -16,8 +14,8 @@ public class GunShoot : MonoBehaviour
             // What game object we want to spawn
             // Where we want to spawn the game object
             // What rotation angle we want the game object to be at when it spawns in
-            Instantiate(Bullet, BullSpwanPoint.position, transform.rotation);
-            SM.ShootSFX();
+            Instantiate(bullet, bullSpwanPoint.position, transform.rotation);
+            sm.ShootSFX();
         }
     }
 }

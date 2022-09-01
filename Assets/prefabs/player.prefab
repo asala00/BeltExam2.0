@@ -101,19 +101,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93bf9ab028a54e618d0518b991446fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playersController: {fileID: 0}
-  _winCanvas: {fileID: 0}
-  _playerHUD: {fileID: 0}
-  PlayerMovemntScript: {fileID: 0}
-  _endGoalHintCam: {fileID: 0}
-  _pScore: {fileID: 0}
-  HP: 1
-  _hpBar: {fileID: 0}
-  _getGun: {fileID: 0}
-  _sm: {fileID: 0}
-  _respawnCheckPointR: {fileID: 0}
-  _respawnCheckPointL: {fileID: 0}
-  _respawnCheckPointOffLevel: {fileID: 0}
+  playersController: {fileID: 7595408341001271405}
+  winCanvas: {fileID: 0}
+  playerHUD: {fileID: 0}
+  endGoalHintCam: {fileID: 0}
+  pScore: {fileID: 0}
+  hpBar: {fileID: 0}
+  getGun: {fileID: 5166430973504079311}
+  sm: {fileID: 0}
+  respawnCheckPointR: {fileID: 0}
+  respawnCheckPointL: {fileID: 0}
+  respawnCheckPointOffLevel: {fileID: 0}
+  playerMovemntScript: {fileID: 287195057920751223}
+  hp: 1
 --- !u!114 &287195057920751223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,10 +126,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1913f2002df4cc3add669a23cb7f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Controller: {fileID: 7595408341001271405}
-  PlayerSpeed: 5
-  MovementCam: {fileID: 0}
-  JumpHeight: 2
+  controller: {fileID: 7595408341001271405}
+  playerSpeed: 10
+  movementCam: {fileID: 0}
+  jumpHeight: 2
 --- !u!143 &7595408341001271405
 CharacterController:
   m_ObjectHideFlags: 0
@@ -340,6 +340,12 @@ PrefabInstance:
 --- !u!4 &5166430973504079300 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 216224566793950058, guid: 9c7711e0d520440b39e7289b1650e7ef,
+    type: 3}
+  m_PrefabInstance: {fileID: 4950289978559960750}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5166430973504079311 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 216224566793950049, guid: 9c7711e0d520440b39e7289b1650e7ef,
     type: 3}
   m_PrefabInstance: {fileID: 4950289978559960750}
   m_PrefabAsset: {fileID: 0}

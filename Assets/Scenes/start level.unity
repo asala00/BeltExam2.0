@@ -577,13 +577,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74813886062c94057824371df9198605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerMovemntScript: {fileID: 4248754642249337814}
-  CameraMovement: {fileID: 1477906785}
+  cameraMovement: {fileID: 1477906785}
   titleScreenCanvas: {fileID: 167629727}
   playerHUD: {fileID: 1502369849}
   refundCanvas: {fileID: 1208674770}
-  SM: {fileID: 318352319}
-  BackGroundMusic: {fileID: 1801171598}
+  sm: {fileID: 318352319}
+  backGroundMusic: {fileID: 1801171598}
+  playerMovemntScript: {fileID: 4248754642249337814}
 --- !u!4 &59822013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 993910750082053478, guid: bda33a4bca6184372bc607fc94936cec,
@@ -2383,13 +2383,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc4167e4513ab47ce91cba57ac2724a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 318352317}
-  Shoot: {fileID: 8300000, guid: f5bb35355657647079a9e587f1df0a68, type: 3}
-  PowerUp: {fileID: 8300000, guid: 150bf9fab727e4b09b586e3c341738e0, type: 3}
-  DefeatTurret: {fileID: 8300000, guid: 9872fa153a3a34e28bbf0008aa4c4c76, type: 3}
-  RickRoll: {fileID: 8300000, guid: 60d1d3cfef8c043848632d61929af213, type: 3}
-  Respawn: {fileID: 8300000, guid: 75accb316fa674140b2f97e135428516, type: 3}
-  Win: {fileID: 8300000, guid: 769a7819019574272aaa784a9ed93a2d, type: 3}
+  audioSource: {fileID: 318352317}
+  shoot: {fileID: 8300000, guid: f5bb35355657647079a9e587f1df0a68, type: 3}
+  powerUp: {fileID: 8300000, guid: 150bf9fab727e4b09b586e3c341738e0, type: 3}
+  defeatTurret: {fileID: 8300000, guid: 9872fa153a3a34e28bbf0008aa4c4c76, type: 3}
+  rickRoll: {fileID: 8300000, guid: 60d1d3cfef8c043848632d61929af213, type: 3}
+  respawn: {fileID: 8300000, guid: 75accb316fa674140b2f97e135428516, type: 3}
+  win: {fileID: 8300000, guid: 769a7819019574272aaa784a9ed93a2d, type: 3}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2459,7 +2459,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_LocalRotation: {x: 0.09165635, y: 0.0073868018, z: -0.000679928, w: 0.99576306}
+  m_LocalRotation: {x: 0.09165635, y: 0.0073868367, z: -0.0006799311, w: 0.99576306}
   m_LocalPosition: {x: 79.83257, y: -38.39125, z: -107.39158}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2587,7 +2587,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7767695, y: 1}
+    m_SensorSize: {x: 1.7768457, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -2603,7 +2603,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 343787093}
-  m_LocalRotation: {x: 0.09165634, y: 0.0073868018, z: -0.000679928, w: 0.99576306}
+  m_LocalRotation: {x: 0.09165634, y: 0.0073868367, z: -0.0006799313, w: 0.99576306}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6488,7 +6488,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7767695, y: 1}
+    m_SensorSize: {x: 1.7768457, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6900,7 +6900,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7767695, y: 1}
+    m_SensorSize: {x: 1.7768457, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6916,7 +6916,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 744046072}
-  m_LocalRotation: {x: 0.10759912, y: 0.0073749833, z: -0.00079819775, w: 0.99416673}
+  m_LocalRotation: {x: 0.10759912, y: 0.0073749744, z: -0.0007981968, w: 0.99416673}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -17824,7 +17824,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7767695, y: 1}
+    m_SensorSize: {x: 1.7768457, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -27276,13 +27276,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74813886062c94057824371df9198605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerMovemntScript: {fileID: 4248754642249337814}
-  CameraMovement: {fileID: 1477906785}
+  cameraMovement: {fileID: 1477906785}
   titleScreenCanvas: {fileID: 167629727}
   playerHUD: {fileID: 1502369849}
   refundCanvas: {fileID: 1208674770}
-  SM: {fileID: 318352319}
-  BackGroundMusic: {fileID: 1801171598}
+  sm: {fileID: 318352319}
+  backGroundMusic: {fileID: 1801171598}
+  playerMovemntScript: {fileID: 4248754642249337814}
 --- !u!1 &1801171597
 GameObject:
   m_ObjectHideFlags: 0
@@ -27424,7 +27424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1b62686a2bc746d5887e717f3e9193b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioSource: {fileID: 0}
+  audioSource: {fileID: 1801171598}
 --- !u!1 &1825324689
 GameObject:
   m_ObjectHideFlags: 0
@@ -30710,6 +30710,11 @@ PrefabInstance:
       propertyPath: PlayerSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 287195057920751223, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
+        type: 3}
+      propertyPath: movementCam
+      value: 
+      objectReference: {fileID: 330585546}
     - target: {fileID: 2682170137211813160, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
         type: 3}
       propertyPath: SM
@@ -30785,6 +30790,11 @@ PrefabInstance:
       propertyPath: SM
       value: 
       objectReference: {fileID: 318352319}
+    - target: {fileID: 5034141681677647412, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
+        type: 3}
+      propertyPath: sm
+      value: 
+      objectReference: {fileID: 318352319}
     - target: {fileID: 5166430973504079300, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
         type: 3}
       propertyPath: m_RootOrder
@@ -30822,6 +30832,11 @@ PrefabInstance:
       objectReference: {fileID: 1726883309}
     - target: {fileID: 8705936777468874772, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
         type: 3}
+      propertyPath: hpBar
+      value: 
+      objectReference: {fileID: 1726883309}
+    - target: {fileID: 8705936777468874772, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
+        type: 3}
       propertyPath: Pscore
       value: 
       objectReference: {fileID: 115912069}
@@ -30832,9 +30847,9 @@ PrefabInstance:
       objectReference: {fileID: 1726883309}
     - target: {fileID: 8705936777468874772, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
         type: 3}
-      propertyPath: getGun
+      propertyPath: pScore
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 115912069}
     - target: {fileID: 8705936777468874772, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
         type: 3}
       propertyPath: _getGun
@@ -30848,6 +30863,11 @@ PrefabInstance:
     - target: {fileID: 8705936777468874772, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
         type: 3}
       propertyPath: PlayerHUD
+      value: 
+      objectReference: {fileID: 1502369849}
+    - target: {fileID: 8705936777468874772, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
+        type: 3}
+      propertyPath: playerHUD
       value: 
       objectReference: {fileID: 1502369849}
     - target: {fileID: 8705936777468874772, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
@@ -30895,11 +30915,6 @@ PrefabInstance:
       propertyPath: playertransform
       value: 
       objectReference: {fileID: 4248754642249337811}
-    - target: {fileID: 8705936777468874772, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
-        type: 3}
-      propertyPath: playersController
-      value: 
-      objectReference: {fileID: 4248754642249337816}
     - target: {fileID: 8705936777468874772, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
         type: 3}
       propertyPath: respawnCheckPoint
@@ -30960,12 +30975,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a1913f2002df4cc3add669a23cb7f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!143 &4248754642249337816 stripped
-CharacterController:
-  m_CorrespondingSourceObject: {fileID: 7595408341001271405, guid: aaf53cfb51ad240c1bb023a79c76b0bf,
-    type: 3}
-  m_PrefabInstance: {fileID: 4248754642249337808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7324309910285554033
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31047,6 +31056,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324309911253914401, guid: 2205bcdf9b2c6494e8501bbadfcc752f,
+        type: 3}
+      propertyPath: m_Name
+      value: spawn point
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191485914253963116, guid: 2205bcdf9b2c6494e8501bbadfcc752f,
+        type: 3}
+      propertyPath: m_Name
+      value: light
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2205bcdf9b2c6494e8501bbadfcc752f, type: 3}

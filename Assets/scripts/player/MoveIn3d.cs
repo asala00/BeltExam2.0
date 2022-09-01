@@ -1,61 +1,59 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+
 
 public class MoveIn3d : MonoBehaviour
 {
-    public CharacterController Controller; //public to plug it in and use it for the last .move command
-    public float PlayerSpeed;
-    [SerializeField] Transform MovementCam; //ref for our cam so we can use it to change where our GO's forward is (the way the camera is facing)
+    public CharacterController controller; //public to plug it in and use it for the last .move command
+    public float playerSpeed;
+    [SerializeField] Transform movementCam; //ref for our cam so we can use it to change where our GO's forward is (the way the camera is facing)
     
     //for jump
     private Vector3 _playerVelocity;
     private bool _groundedPlayer;
-    public float JumpHeight = 2.0f;
+    public float jumpHeight = 2.0f;
     private float _gravityValue = -9.81f;
 
     void Update()
     {
-        float Hinput = Input.GetAxisRaw("Horizontal") * PlayerSpeed;
-        float Vinput = Input.GetAxisRaw("Vertical") * PlayerSpeed;
-        Vector3 _direction = new Vector3(Hinput, 0f, Vinput).normalized;
+        float hInput = Input.GetAxisRaw("Horizontal") * playerSpeed;
+        float vInput = Input.GetAxisRaw("Vertical") * playerSpeed;
+        Vector3 direction = new Vector3(hInput, 0f, vInput).normalized;
         
         //for jump
-        _groundedPlayer = Controller.isGrounded;
+        _groundedPlayer = controller.isGrounded;
         if (_groundedPlayer && _playerVelocity.y <= 0)
         {
             _playerVelocity.y = 0f;
         }
         
-        if (_direction != Vector3.zero)
+        if (direction != Vector3.zero)
         {
-            gameObject.transform.forward = _direction;
+            gameObject.transform.forward = direction;
         }
         // Changes the height position of the player..
         if (Input.GetButtonDown("Jump") && _groundedPlayer)
         {
-            _playerVelocity.y += Mathf.Sqrt(JumpHeight * -3.0f * _gravityValue);
+            _playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * _gravityValue);
         }
 
         _playerVelocity.y += _gravityValue * Time.deltaTime;
 
         //telling the player to move according to the input
         //for local direction movement (from the old script)
-        if (_direction.magnitude >= 0.1f)
+        if (direction.magnitude >= 0.1f)
         {
             //rotates the players orientation based on the cameras rotation
-            float _targetAngel = Mathf.Atan2(_direction.x, _direction.z) * Mathf.Rad2Deg+ MovementCam.eulerAngles.y;
-            transform.rotation = Quaternion.Euler(0f, _targetAngel, 0f);
-            Vector3 moveDirection = Quaternion.Euler(0f, _targetAngel, 0f) * Vector3.forward;
+            float targetAngel = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg+ movementCam.eulerAngles.y;
+            transform.rotation = Quaternion.Euler(0f, targetAngel, 0f);
+            Vector3 moveDirection = Quaternion.Euler(0f, targetAngel, 0f) * Vector3.forward;
 
-            Controller.Move(moveDirection.normalized * PlayerSpeed * Time.deltaTime);//moves it according to last code segment
+            controller.Move(moveDirection.normalized * playerSpeed * Time.deltaTime);//moves it according to last code segment
         }
     }
 
     private void FixedUpdate() 
     {
-        Controller.Move(_playerVelocity * Time.deltaTime); //simulates jumping
+        controller.Move(_playerVelocity * Time.deltaTime); //simulates jumping
     }
 
     private void OnTriggerStay(Collider other)

@@ -15,6 +15,8 @@ TagManager:
   - offLevel
   - stairs
   - JumpBlock
+  - 2D Trigger
+  - 2D Trigger L
   layers:
   - Default
   - TransparentFX

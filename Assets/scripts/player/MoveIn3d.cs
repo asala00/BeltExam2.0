@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.Serialization;
 
 public class MoveIn3d : MonoBehaviour
 {
@@ -8,10 +8,10 @@ public class MoveIn3d : MonoBehaviour
     [SerializeField] Transform movementCam; //ref for our cam so we can use it to change where our GO's forward is (the way the camera is facing)
     
     //for jump
-    private Vector3 _playerVelocity;
-    private bool _groundedPlayer;
+    public Vector3 playerVelocity;
+    public bool groundedPlayer;
     public float jumpHeight = 2.0f;
-    private float _gravityValue = -9.81f;
+    public float gravityValue = -9.81f;
 
     void Update()
     {
@@ -20,10 +20,10 @@ public class MoveIn3d : MonoBehaviour
         Vector3 direction = new Vector3(hInput, 0f, vInput).normalized;
         
         //for jump
-        _groundedPlayer = controller.isGrounded;
-        if (_groundedPlayer && _playerVelocity.y <= 0)
+        groundedPlayer = controller.isGrounded;
+        if (groundedPlayer && playerVelocity.y <= 0)
         {
-            _playerVelocity.y = 0f;
+            playerVelocity.y = 0f;
         }
         
         if (direction != Vector3.zero)
@@ -31,12 +31,12 @@ public class MoveIn3d : MonoBehaviour
             gameObject.transform.forward = direction;
         }
         // Changes the height position of the player..
-        if (Input.GetButtonDown("Jump") && _groundedPlayer)
+        if (Input.GetButtonDown("Jump") && groundedPlayer)
         {
-            _playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * _gravityValue);
+            playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }
 
-        _playerVelocity.y += _gravityValue * Time.deltaTime;
+        playerVelocity.y += gravityValue * Time.deltaTime;
 
         //telling the player to move according to the input
         //for local direction movement (from the old script)
@@ -53,14 +53,14 @@ public class MoveIn3d : MonoBehaviour
 
     private void FixedUpdate() 
     {
-        controller.Move(_playerVelocity * Time.deltaTime); //simulates jumping
+        controller.Move(playerVelocity * Time.deltaTime); //simulates jumping
     }
 
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("JumpBlock"))
         {
-            _playerVelocity.y += _gravityValue;
+            playerVelocity.y += gravityValue;
         }
     }
 }

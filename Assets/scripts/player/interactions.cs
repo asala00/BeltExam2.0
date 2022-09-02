@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;     //to code the text & images ui
 using TMPro;
@@ -11,19 +12,19 @@ public class Interactions : MonoBehaviour
     [SerializeField] private GameObject playerHUD;
     [SerializeField] private GameObject endGoalHintCam;
     [SerializeField] private TextMeshProUGUI pScore;  //Text variables grant us access to those objects' Text components
-
-    //health bar vars
     [SerializeField] private Image hpBar;
     [SerializeField] private GameObject getGun;
+    [SerializeField] private GameObject cam2D;
+    [SerializeField] private GameObject cam2DLeft;
     
     //sound FX
     [SerializeField] private SoundManager sm;
     
-    //respawns
+    //transforms 
     [SerializeField] private Transform respawnCheckPointR;
     [SerializeField] private Transform respawnCheckPointL;
     [SerializeField] private Transform respawnCheckPointOffLevel;
-    
+
     #endregion
     
     public MoveIn3d playerMovemntScript;
@@ -113,6 +114,30 @@ public class Interactions : MonoBehaviour
             transform.position = respawnCheckPointL.position;
             playersController.enabled = true;
             sm.RespawnSFX();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.CompareTag("2D Trigger"))
+        {
+            cam2D.SetActive(true);
+        }
+        if (other.gameObject.CompareTag("2D Trigger L"))
+        {
+            cam2DLeft.SetActive(true);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("2D Trigger"))
+        {
+            cam2D.SetActive(false);
+        }
+        if (other.gameObject.CompareTag("2D Trigger L"))
+        {
+            cam2DLeft.SetActive(false);
         }
     }
 
